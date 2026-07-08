@@ -1,148 +1,233 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Santiago Loaiza Santamaria — FullStack Developer. Python, JavaScript, TypeScript, React, Node.js, Odoo, Docker & AWS.">
+   <meta name="author" content="Santiago Loaiza Santamaria">
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+   <!-- Open Graph -->
+   <meta property="og:title" content="Santiago Loaiza — FullStack Developer">
+   <meta property="og:description" content="Portafolio de Santiago Loaiza Santamaria, desarrollador de software FullStack.">
+   <meta property="og:type" content="website">
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+   <!-- Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
 
-      <title>Responsive resume cv - Bedimcode</title>
-   </head>
-   <body>
-      <div class="resume container">
-         <!--==================== HEADER ====================-->
-         <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav__logo">Santiago</a>
-    
-                <div class="nav__menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link">
-                                <i class="ri-home-line"></i>
-                            </a>
-                        </li>
-    
-                        <li class="nav__item">
-                            <a href="#about" class="nav__link">
-                                <i class="ri-user-line"></i>
-                            </a>
-                        </li>
-    
-                        <li class="nav__item">
-                            <a href="#skills" class="nav__link">
-                                <i class="ri-file-list-line"></i>
-                            </a>
-                        </li>
-    
-                        <li class="nav__item">
-                            <a href="#education" class="nav__link">
-                                <i class="ri-book-line"></i>
-                            </a>
-                        </li>
-    
-                        <li class="nav__item">
-                            <a href="#work" class="nav__link">
-                                <i class="ri-briefcase-3-line"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-    
-        <!--================Them button==================-->
-                <i class="ri-moon-line change theme" id="theme-button"></i>
-            </nav>
-    
-        </header>
-   
-         <!--==================== MAIN ====================-->
-         <main class="resume__main">
-            <!--==================== HOME ====================-->
-            <section class="home" id="home">
-               <div class="home_container grid">
-                <h1 class="home__name">
-                    HOLA, SOY<br>
-                    SANTIAGO
-                </h1>
+   <!-- Icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
-                <div class="home__blod">
-                    <div class="home__perfil">
-                       <img src="assets/img/Loaiza Santamaria Santiago_02-fotor-bg-remover-20240215203447.png" alt="home image" class="home__imq"> 
-                    </div>
-                    <svg class="home__star-1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M25 0L31.7523 18.2477L50 25L31.7523 31.7523L25 
-                        50L18.2477 31.7523L0 25L18.2477 18.2477L25 0Z" />
-                     </svg>
+   <link rel="stylesheet" href="assets/css/styles.css">
 
-                     <svg class="home__star-1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M25 0L31.7523 18.2477L50 25L31.7523 31.7523L25 
-                        50L18.2477 31.7523L0 25L18.2477 18.2477L25 0Z" />
-                     </svg>                     
-                </div>
+   <title>Santiago Loaiza — FullStack Developer</title>
+</head>
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="#home" class="nav__logo">Santiago Loaiza<span class="nav__logo-dot">.</span></a>
 
-                <h1 class="home__profession">
-                    DESARROLLADOR DE<br>
-                    SOFTWARE
-                </h1>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="#home" class="nav__link active-link" data-i18n="nav_home">Inicio</a></li>
+               <li><a href="#about" class="nav__link" data-i18n="nav_about">Sobre mí</a></li>
+               <li><a href="#skills" class="nav__link" data-i18n="nav_skills">Skills</a></li>
+               <li><a href="#experience" class="nav__link" data-i18n="nav_experience">Experiencia</a></li>
+               <li><a href="#education" class="nav__link" data-i18n="nav_education">Educación</a></li>
+               <li><a href="#contact" class="nav__link" data-i18n="nav_contact">Contacto</a></li>
+            </ul>
+            <i class="ri-close-line nav__close" id="nav-close"></i>
+         </div>
+
+         <div class="nav__actions">
+            <button class="nav__btn" id="lang-button" title="Cambiar idioma" aria-label="Cambiar idioma">
+               <span id="lang-label">ES</span>
+            </button>
+            <button class="nav__btn" id="theme-button" title="Cambiar tema" aria-label="Cambiar tema">
+               <i class="ri-moon-line"></i>
+            </button>
+            <i class="ri-menu-3-line nav__toggle" id="nav-toggle"></i>
+         </div>
+      </nav>
+   </header>
+
+   <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+         <div class="home__container container grid">
+            <div class="home__data">
+               <span class="home__greeting" data-i18n="home_greeting">Hola, soy</span>
+               <h1 class="home__name">Santiago Loaiza</h1>
+               <h2 class="home__profession" data-i18n="home_profession">Desarrollador de Software FullStack</h2>
+               <p class="home__description" data-i18n="home_description">
+                  Construyo soluciones web y automatizaciones end-to-end. Mi background como analista
+                  funcional me permite entender el negocio y traducirlo en software que resuelve problemas reales.
+               </p>
+
+               <div class="home__location">
+                  <i class="ri-map-pin-line"></i>
+                  <span>Bogotá, Colombia</span>
                </div>
-            </section>
 
-            <div class="resume__left">
+               <div class="home__buttons">
+                  <a href="#contact" class="button" data-i18n="home_cta_contact">Contáctame</a>
+                  <a href="#experience" class="button button--ghost" data-i18n="home_cta_work">Ver experiencia</a>
+               </div>
 
+               <div class="home__socials">
+                  <a href="https://github.com/SantiLoaiza" target="_blank" rel="noopener" class="home__social" title="GitHub"><i class="ri-github-fill"></i></a>
+                  <a href="https://www.linkedin.com/in/santiago-loaiza-santamaria-99b85819a" target="_blank" rel="noopener" class="home__social" title="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+                  <a href="mailto:santiagoloaiza16s@gmail.com" class="home__social" title="Email"><i class="ri-mail-fill"></i></a>
+               </div>
             </div>
 
-            <div class="resume__left">
-               <!--==================== ABOUT ====================-->
-               <section class="about section" id="about">
-                  
-               </section>
-      
-               <!--==================== SKILLS ====================-->
-               <section class="skills section" id="skills">
-                  
-               </section>
-      
-               <!--==================== EDUCATION ====================-->
-               <section class="education section" id="education">
-                  
-               </section>
+            <div class="home__image">
+               <div class="home__blob">
+                  <img src="assets/img/profile.png" alt="Santiago Loaiza" class="home__img">
+               </div>
+               <div class="home__badge">
+                  <span class="home__badge-dot"></span>
+                  <span data-i18n="home_available">Disponible para proyectos</span>
+               </div>
             </div>
+         </div>
+      </section>
 
-            <div class="resume__right">
-               <!--==================== WORK ====================-->
-               <section class="work section" id="work">
-                  
-               </section>
-      
-               <!--==================== CERTIFICATES ====================-->
-               <section class="certificates section">
-                  
-               </section>
-      
-               <!--==================== REFERENCES ====================-->
-               <section class="references section">
-                  
-               </section>
+      <!--==================== ABOUT ====================-->
+      <section class="about section" id="about">
+         <div class="container">
+            <span class="section__subtitle" data-i18n="about_subtitle">Quién soy</span>
+            <h2 class="section__title" data-i18n="about_title">Sobre mí</h2>
+
+            <div class="about__container grid">
+               <div class="about__text">
+                  <p data-i18n="about_p1">
+                     Soy desarrollador de software con experiencia previa como analista funcional, lo que me
+                     permite comprender en profundidad las necesidades del usuario y traducirlas en soluciones
+                     técnicas efectivas.
+                  </p>
+                  <p data-i18n="about_p2">
+                     Manejo tecnologías como Python, JavaScript, TypeScript, React, Node.js, Odoo (MVC), Docker,
+                     AWS y SQL. Soy apasionado por aprender y aportar en proyectos innovadores, con capacidad para
+                     trabajar en equipo bajo metodologías ágiles.
+                  </p>
+               </div>
+
+               <ul class="about__stats grid">
+                  <li class="about__stat">
+                     <span class="about__stat-number">5+</span>
+                     <span class="about__stat-label" data-i18n="about_stat_years">Experiencia en tech</span>
+                  </li>
+                  <li class="about__stat">
+                     <span class="about__stat-number">2</span>
+                     <span class="about__stat-label" data-i18n="about_stat_roles">Años en desarrollo</span>
+                  </li>
+                  <li class="about__stat">
+                     <span class="about__stat-number">2</span>
+                     <span class="about__stat-label" data-i18n="about_stat_lang">Idiomas</span>
+                  </li>
+               </ul>
             </div>
-         </main>
-   
-         <!--==================== FOOTER ====================-->
-         <footer class="footer">
-            
-         </footer>
+         </div>
+      </section>
+
+      <!--==================== SKILLS ====================-->
+      <section class="skills section" id="skills">
+         <div class="container">
+            <span class="section__subtitle" data-i18n="skills_subtitle">Lo que uso</span>
+            <h2 class="section__title" data-i18n="skills_title">Habilidades técnicas</h2>
+
+            <div class="skills__container grid" id="skills-container"><!-- rendered by JS --></div>
+         </div>
+      </section>
+
+      <!--==================== EXPERIENCE ====================-->
+      <section class="experience section" id="experience">
+         <div class="container">
+            <span class="section__subtitle" data-i18n="exp_subtitle">Mi trayectoria</span>
+            <h2 class="section__title" data-i18n="exp_title">Experiencia profesional</h2>
+
+            <div class="timeline" id="timeline"><!-- rendered by JS --></div>
+         </div>
+      </section>
+
+      <!--==================== EDUCATION ====================-->
+      <section class="education section" id="education">
+         <div class="container">
+            <span class="section__subtitle" data-i18n="edu_subtitle">Formación</span>
+            <h2 class="section__title" data-i18n="edu_title">Educación e idiomas</h2>
+
+            <div class="education__container grid">
+               <div class="education__block">
+                  <h3 class="education__heading"><i class="ri-graduation-cap-line"></i> <span data-i18n="edu_studies">Estudios</span></h3>
+                  <div id="education-list"><!-- rendered by JS --></div>
+               </div>
+
+               <div class="education__block">
+                  <h3 class="education__heading"><i class="ri-translate-2"></i> <span data-i18n="edu_languages">Idiomas</span></h3>
+                  <div class="lang__item">
+                     <div class="lang__head"><span data-i18n="lang_es">Español</span><span class="lang__level" data-i18n="lang_es_level">Nativo</span></div>
+                     <div class="lang__bar"><span style="width:100%"></span></div>
+                  </div>
+                  <div class="lang__item">
+                     <div class="lang__head"><span data-i18n="lang_en">Inglés</span><span class="lang__level" data-i18n="lang_en_level">Intermedio (B1)</span></div>
+                     <div class="lang__bar"><span style="width:55%"></span></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== CONTACT ====================-->
+      <section class="contact section" id="contact">
+         <div class="container">
+            <span class="section__subtitle" data-i18n="contact_subtitle">Hablemos</span>
+            <h2 class="section__title" data-i18n="contact_title">Contacto</h2>
+
+            <p class="contact__lead" data-i18n="contact_lead">
+               ¿Tienes un proyecto o una oportunidad? Escríbeme, estaré encantado de conversar.
+            </p>
+
+            <div class="contact__grid grid">
+               <a href="mailto:santiagoloaiza16s@gmail.com" class="contact__card">
+                  <i class="ri-mail-line"></i>
+                  <span class="contact__card-label">Email</span>
+                  <span class="contact__card-value">santiagoloaiza16s@gmail.com</span>
+               </a>
+               <div class="contact__card">
+                  <i class="ri-phone-line"></i>
+                  <span class="contact__card-label" data-i18n="contact_phone">Teléfono</span>
+                  <span class="contact__card-value" data-i18n="contact_on_request">Disponible bajo solicitud</span>
+               </div>
+               <a href="https://www.linkedin.com/in/santiago-loaiza-santamaria-99b85819a" target="_blank" rel="noopener" class="contact__card">
+                  <i class="ri-linkedin-box-line"></i>
+                  <span class="contact__card-label">LinkedIn</span>
+                  <span class="contact__card-value">Santiago Loaiza Santamaría</span>
+               </a>
+               <a href="https://github.com/SantiLoaiza" target="_blank" rel="noopener" class="contact__card">
+                  <i class="ri-github-line"></i>
+                  <span class="contact__card-label">GitHub</span>
+                  <span class="contact__card-value">@SantiLoaiza</span>
+               </a>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+      <div class="container footer__container">
+         <span class="footer__logo">Santiago Loaiza</span>
+         <span class="footer__copy">© <span id="year"></span> — <span data-i18n="footer_text">Hecho con código y matcha.</span></span>
       </div>
+   </footer>
 
-      <!--========== SCROLL UP ==========-->
-      
+   <a href="#home" class="scrollup" id="scroll-up" aria-label="Volver arriba"><i class="ri-arrow-up-line"></i></a>
 
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
+   <script src="assets/js/main.js"></script>
+</body>
 </html>
