@@ -26,7 +26,7 @@ const DATA = {
   experience: [
     {
       role: { es: "Desarrollador FullStack", en: "FullStack Developer" },
-      company: "IdeasCol · Ingeniero de Software",
+      company: { es: "IdeasCol · Ingeniero de Software", en: "IdeasCol · Software Engineer" },
       date: { es: "Ene 2025 — Actual", en: "Jan 2025 — Present" },
       bullets: {
         es: [
@@ -205,7 +205,7 @@ function renderExperience(lang) {
           <h3 class="tl__role">${e.role[lang]}</h3>
           <span class="tl__date">${e.date[lang]}</span>
         </div>
-        <span class="tl__company"><i class="ri-building-line"></i> ${e.company}</span>
+        <span class="tl__company"><i class="ri-building-line"></i> ${typeof e.company === "string" ? e.company : e.company[lang]}</span>
         <ul class="tl__list">
           ${e.bullets[lang].map((b) => `<li>${b}</li>`).join("")}
         </ul>
