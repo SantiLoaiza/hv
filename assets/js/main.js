@@ -12,14 +12,19 @@ const DATA = {
       items: ["React", "Node.js", "Odoo", "Automation Anywhere (RPA)", "Docker", "Docker Compose", "Google Cloud", "AWS"],
     },
     {
+      icon: "ri-sparkling-2-line",
+      title: { es: "IA y desarrollo asistido", en: "AI & AI-assisted development" },
+      items: ["Claude", "Claude Code", "Cursor", "MCP (Model Context Protocol)", { es: "Agentes", en: "Agents" }, "Skills", "OpenAI", "Prompt engineering"],
+    },
+    {
       icon: "ri-git-branch-line",
       title: { es: "Herramientas", en: "Tools" },
-      items: ["Git", "REST APIs", "Web Services", "PostgreSQL", "MongoDB", "SQL Server", "Apache JMeter"],
+      items: ["Git", "REST APIs", { es: "Servicios web", en: "Web services" }, "PostgreSQL", "MongoDB", "SQL Server", "Apache JMeter", { es: "Documentación técnica", en: "Technical documentation" }],
     },
     {
       icon: "ri-flow-chart",
       title: { es: "Metodologías", en: "Methodologies" },
-      items: ["Scrum", "Análisis funcional / Functional analysis", "Arquitectura de software", "Automatización de pruebas", "MVC", "Diseño responsive"],
+      items: ["Scrum", { es: "Análisis funcional", en: "Functional analysis" }, { es: "Arquitectura de software", en: "Software architecture" }, { es: "Automatización de pruebas", en: "Test automation" }, "MVC", { es: "Diseño responsive", en: "Responsive design" }],
     },
   ],
 
@@ -33,11 +38,13 @@ const DATA = {
           "Desarrollo de aplicaciones web con Python, Node.js, TypeScript, React, JavaScript y MongoDB.",
           "Creación y consumo de APIs, optimización de procesos y automatización de tareas.",
           "Integración de funcionalidades basadas en IA para mejorar productos y experiencias de usuario.",
+          "Desarrollo asistido por IA con Claude, Claude Code y Cursor, implementando MCP, agentes y skills.",
         ],
         en: [
           "Web application development with Python, Node.js, TypeScript, React, JavaScript and MongoDB.",
           "Building and consuming APIs, process optimization and task automation.",
           "Integration of AI-powered features to improve products and user experiences.",
+          "AI-assisted development with Claude, Claude Code and Cursor, implementing MCP, agents and skills.",
         ],
       },
     },
@@ -49,13 +56,13 @@ const DATA = {
         es: [
           "Desarrollo y diseño de soluciones con Python y XML en Odoo (MVC), incluyendo migraciones entre versiones.",
           "Configuración y montaje de contenedores con Docker en entornos Linux.",
-          "Consumo de servicios web / APIs (OpenAI) y AWS.",
+          "Consumo de servicios web y APIs de OpenAI (ChatGPT, GPT-4o, GPT-4o mini) y AWS.",
           "Administración y manejo de datos en bases de datos PostgreSQL.",
         ],
         en: [
           "Development and design of solutions with Python and XML in Odoo (MVC), including cross-version migrations.",
           "Setup and deployment of Docker containers in Linux environments.",
-          "Consumption of web services / APIs (OpenAI) and AWS.",
+          "Consumption of OpenAI web services and APIs (ChatGPT, GPT-4o, GPT-4o mini) and AWS.",
           "Administration and data handling in PostgreSQL databases.",
         ],
       },
@@ -140,7 +147,7 @@ const I18N = {
     home_available: "Disponible para proyectos",
     about_subtitle: "Quién soy", about_title: "Sobre mí",
     about_p1: "Soy desarrollador de software con experiencia previa como analista funcional, lo que me permite comprender en profundidad las necesidades del usuario y traducirlas en soluciones técnicas efectivas.",
-    about_p2: "Manejo tecnologías como Python, JavaScript, TypeScript, React, Node.js, Odoo (MVC), Docker, AWS y SQL. Soy apasionado por aprender y aportar en proyectos innovadores, con capacidad para trabajar en equipo bajo metodologías ágiles.",
+    about_p2: "Manejo tecnologías como Python, JavaScript, TypeScript, React, Node.js, Odoo (MVC), Docker, AWS y SQL, y trabajo con desarrollo asistido por IA (Claude, Claude Code, Cursor, MCP, agentes y skills). Soy apasionado por aprender y aportar en proyectos innovadores, con capacidad para trabajar en equipo bajo metodologías ágiles.",
     about_stat_years: "Experiencia en tech", about_stat_roles: "Años en desarrollo", about_stat_lang: "Idiomas",
     skills_subtitle: "Lo que uso", skills_title: "Habilidades técnicas",
     exp_subtitle: "Mi trayectoria", exp_title: "Experiencia profesional",
@@ -163,7 +170,7 @@ const I18N = {
     home_available: "Available for projects",
     about_subtitle: "Who I am", about_title: "About me",
     about_p1: "I'm a software developer with prior experience as a functional analyst, which lets me deeply understand user needs and translate them into effective technical solutions.",
-    about_p2: "I work with technologies like Python, JavaScript, TypeScript, React, Node.js, Odoo (MVC), Docker, AWS and SQL. I'm passionate about learning and contributing to innovative projects, and comfortable working in teams under agile methodologies.",
+    about_p2: "I work with technologies like Python, JavaScript, TypeScript, React, Node.js, Odoo (MVC), Docker, AWS and SQL, and I work with AI-assisted development (Claude, Claude Code, Cursor, MCP, agents and skills). I'm passionate about learning and contributing to innovative projects, and comfortable working in teams under agile methodologies.",
     about_stat_years: "Experience in tech", about_stat_roles: "Years in development", about_stat_lang: "Languages",
     skills_subtitle: "What I use", skills_title: "Technical skills",
     exp_subtitle: "My journey", exp_title: "Professional experience",
@@ -190,7 +197,7 @@ function renderSkills(lang) {
     <div class="skills__group reveal">
       <h3 class="skills__group-title"><i class="${g.icon}"></i> ${g.title[lang]}</h3>
       <div class="skills__chips">
-        ${g.items.map((i) => `<span class="chip">${i}</span>`).join("")}
+        ${g.items.map((i) => `<span class="chip">${typeof i === "string" ? i : i[lang]}</span>`).join("")}
       </div>
     </div>`).join("");
 }
