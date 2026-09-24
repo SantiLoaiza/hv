@@ -3,7 +3,7 @@
 Portafolio personal de **Santiago Loaiza Santamaria**, desarrollador de software FullStack.
 Sitio estático, responsive, bilingüe (ES / EN) y con modo claro/oscuro.
 
-🔗 **Live:** _(pendiente de deploy en Vercel)_
+🔗 **Live:** https://cvsantiloaiza.vercel.app
 
 ## ✨ Características
 
@@ -11,6 +11,7 @@ Sitio estático, responsive, bilingüe (ES / EN) y con modo claro/oscuro.
 - Bilingüe español / inglés (toggle en el header, recuerda tu preferencia)
 - Modo claro / oscuro (respeta el sistema y guarda la elección)
 - Secciones: Inicio, Sobre mí, Skills, Experiencia (timeline), Educación e idiomas, Contacto
+- Despliegue continuo en Vercel desde `main`
 - Sin frameworks ni build: HTML, CSS y JavaScript vanilla
 
 ## 🛠️ Stack del sitio
